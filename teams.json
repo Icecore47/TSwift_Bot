@@ -1,0 +1,32 @@
+{
+    "Teams": [
+        {
+            "Name": "Swifties",
+            "Rank": "Plat/Masters"
+        },
+        {
+            "Name": "Ebony Ash",
+            "Rank": "Plat/Masters"
+        },
+        {
+            "Name": "The Weebs ",
+            "Rank": "Gold"
+        },
+        {
+            "Name": "Akuma OW ",
+            "Rank": "Plat"
+        },
+        {
+            "Name": "Squad^3",
+            "Rank": "Gold/Plat"
+        },
+        {
+            "Name": "Cheesy Goldfish",
+            "Rank": "Gold/Plat"
+        },
+        {
+            "Name": "Nebula^3",
+            "Rank": "Gold"
+        }
+    ]
+}
