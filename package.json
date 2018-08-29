@@ -1,13 +1,26 @@
 {
-  "name": "bot-js",
+  "name": "ts-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Taylor Swift as a robot",
   "main": "index.js",
-
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
-    "discord.js": "^11.3.2",
+    "express": "^4.16.3",
+    "discord.js": "^11.4.2",
     "overwatch-api": "^0.6.2"
-  }
+  },
+  "engines": {
+    "node": "9.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/my-glitch-app"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
 }

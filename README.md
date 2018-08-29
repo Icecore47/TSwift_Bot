@@ -1,2 +1,3 @@
 # TSwift_Bot
-Discort bot with a varity of different features fot the Taylor Swift Competitive Server
+
+Discord bot with a varity of different features for the Taylor Swift Competitive Server
