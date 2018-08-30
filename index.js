@@ -11,6 +11,7 @@ const fs = require("fs");
 let initialMessage = `**React to the messages below to receive the associated role. If you would like to remove the role, simply remove your reaction!**`;
 
 // This loop reads the /events/ folder and attaches each event file to the appropriate event.
+
 fs.readdir("./commands/", (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
@@ -21,6 +22,7 @@ fs.readdir("./commands/", (err, files) => {
     });
 });
 
+
 client.on("message", message => {
     if (message.author.bot) return;
     if (message.content.match(/\b[oOuU]w[oOuU]([?|!])*(\b|$)/g)) {
@@ -29,7 +31,8 @@ client.on("message", message => {
         return;
     }
     // if user entered nani
-    if (message.content.match(/\b[nN][aA][nN][iI]([?|!])*\b/g)) {
+    if (message.content.match(/\b[nN][aA][nN][iI]([?|!])*\b/g))
+    {
         // select random sentence from array
         message.channel.send(constants.Sentence[Math.floor((Math.random() * constants.Sentence.length))].replace("userID", message.author));
         return;
@@ -73,7 +76,6 @@ client.on('raw', event => {
                 }
             }
         })
-
     }
 });
 
