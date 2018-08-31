@@ -22,6 +22,32 @@ fs.readdir("./commands/", (err, files) => {
     });
 });
 
+client.on("presenceUpdate", (oldState, newState) => {
+    var dt = new Date();
+    var utcDate = dt.toUTCString();
+    switch (newState.user.presence.status) {
+        case "online":
+            if (newState.user.presence.game != null && newState.user.presence.game.streaming) {
+                client.channels.get(constants.gtsGeneralID).send(newState.user.username + " is now streaming");
+            } else if (oldState.user.presence.game != null && oldState.frozenPresence.game.streaming) {
+                client.channels.get(constants.gtsGeneralID).send(oldState.user.username + " finished streaming");
+            } else if (newState.user.presence.game != null) {
+                client.channels.get(constants.gtsGeneralID).send(newState.user.username + " is playing " + newState.user.presence.game.name);
+            } else if (oldState.frozenPresence.game != null) {
+                client.channels.get(constants.gtsGeneralID).send(oldState.user.username + " finished playing " + oldState.frozenPresence.game.name);
+            } else {
+                client.channels.get(constants.gtsConsoleID).send("```diff\n+ " + utcDate + " - " + newState.user.username +
+                    " is now " + newState.user.presence.status + "\n```");
+                client.channels.get(constants.gtsGeneralID).send("你好 " + newState.user.username);
+            }
+            break;
+        case "offline":
+            client.channels.get(constants.gtsConsoleID).send("```diff\n- " + utcDate + " - " + newState.user.username +
+                " went " + newState.user.presence.status + "\n```");
+            client.channels.get(constants.gtsGeneralID).send("再见 " + newState.user.username);
+            break;
+    }
+});
 
 client.on("message", message => {
     if (message.author.bot) return;
