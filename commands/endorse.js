@@ -1,7 +1,8 @@
- const Discord = require("discord.js");
- const OW = require('overwatch-api');
- const platform = 'pc';
+const Discord = require("discord.js");
+const OW = require('overwatch-api');
+const platform = 'pc';
 const region = 'global';
+
 module.exports.run = async (client, message, args) => {
     if (args.length == 0){
         message.channel.send("A player needs a name. `!endorse <YOUR BATTLE TAG>`")

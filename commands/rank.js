@@ -4,7 +4,6 @@ const platform = 'pc';
 const region = 'global';
 
 module.exports.run = async (client, message, args) => {
-
     if (args.length == 0) {
         message.channel.send("A player needs a name. `!rank <YOUR BATTLE TAG>`")
         Return;
@@ -24,8 +23,6 @@ module.exports.run = async (client, message, args) => {
             message.channel.send(user + "'s competitive rank is " + json.competitive.rank);
         }
     });
-   
-    
 };
 
 module.exports.help = {
