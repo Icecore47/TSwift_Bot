@@ -5,7 +5,7 @@ const region = 'global';
 
 module.exports.run = async (client, message, args) => {
     if (args.length == 0) {
-        message.channel.send("A player needs a name. `!rank <YOUR BATTLE TAG>`")
+        message.channel.send("A player needs a name. `!rank <YOUR BATTLE TAG>`");
         Return;
     }
     while (args[0] == '') {
@@ -15,10 +15,10 @@ module.exports.run = async (client, message, args) => {
     OW.getProfile(platform, region, user, (err, json) => {
         user = args[0].replace("-", "#");
         if (err instanceof TypeError) {
-            message.channel.send(user + `'s profile either is private or it does not exists :frowning:`)
+            message.channel.send(user + `'s profile either is private or it does not exists :frowning:`);
         } else if (err) {
             console.error(err);
-            message.channel.send(`I couldn't find ` + user + ` because of a [` + err.name + `] - ` + err.message + " :frowning:")
+            message.channel.send(`I couldn't find ` + user + ` because of a [` + err.name + `] - ` + err.message + " :frowning:");
         } else {
             message.channel.send(user + "'s competitive rank is " + json.competitive.rank);
         }
